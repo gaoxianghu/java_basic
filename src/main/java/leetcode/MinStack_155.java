@@ -1,13 +1,9 @@
 package leetcode;
 
-import javafx.collections.transformation.SortedList;
-
 import java.util.*;
-import java.util.stream.Collectors;
-
-// 155
 
 /**
+ * 155
  * 方法1.用额外一个数组做排序
  * 方法2.用额外一个栈，栈顶保持最小元素
  */
