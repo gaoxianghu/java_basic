@@ -1,14 +1,21 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * 打家劫舍
  */
 public class Solution_198 {
+
     public int rob(int[] nums) {
+
         /**
+         * 相邻元素不能累加，求最大和
+         *
          * [1,2,3,1] 4
          * [2,7,9,3,1] 12
-         * An = max(An-2 + an, An-1)
+         *
+         * 简单动规，递推式：An = max(An-2 + an, An-1)，注意边界和初始值计算
          */
         if (nums == null || nums.length == 0) {
             return 0;

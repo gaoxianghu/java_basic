@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class Solution0201 {
     /**
+     * 删除链表val重复节点
      * 输入：[1, 2, 3, 3, 2, 1]
      * 输出：[1, 2, 3]
      *

@@ -9,8 +9,10 @@ package leetcode;
  * 输入：nums = [1,2,3,4]
  * 输出：[1,3,6,10]
  * 解释：动态和计算过程为 [1, 1+2, 1+2+3, 1+2+3+4] 。
+ *
+ * res[i] += res[i - 1] + nums[i];
  */
-public class Solution_5436 {
+public class Solution_1480 {
     public int[] runningSum(int[] nums) {
         if (nums == null || nums.length == 0) {
             return null;

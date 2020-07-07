@@ -6,7 +6,7 @@ public class MinStack155Test {
 
     @Test
     public void test() {
-        leetcode.MinStack_155 minStack155 = new leetcode.MinStack_155();
+        Solution_155 minStack155 = new Solution_155();
         minStack155.push(-2);
         minStack155.push(0);
         minStack155.push(-3);

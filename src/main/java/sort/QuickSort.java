@@ -2,11 +2,17 @@ package sort;
 
 import tools.SortTool;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 public class QuickSort {
+
+    public static void main(String[] args) {
+        //int[] nums = {6, 4, 7, 3, 1, 0, 5, 2, 8, 12, -1, 14};
+        //int[] nums = {5, 2, 3, 1};
+         int[] nums = {1, 7, 3, 6, 1, 5, 2, 8};
+        SortTool.show(QuickSort.sort(nums));
+        // QuickSort.partition(nums, 0, nums.length - 1);
+    }
 
     /**
      * 快速排序
@@ -17,7 +23,7 @@ public class QuickSort {
         if (nums == null || nums.length <= 1) {
             return nums;
         }
-        sort(nums, 0 , nums.length -1);
+        sort(nums, 0, nums.length - 1);
         return nums;
     }
 
@@ -25,7 +31,7 @@ public class QuickSort {
         if (low >= high) {
             return;
         }
-        int middle = partition(nums, low, high);
+        int middle = partition(nums, low, high); // middle 是划分后 划分基准元素的索引位置
         sort(nums, low, middle - 1);
         sort(nums, middle + 1, high);
     }

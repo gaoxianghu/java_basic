@@ -30,13 +30,11 @@ public class MergeSort {
     private static void mergeArray(int[] nums, int left, int right, int mid) {
         int[] temp = new int[right - left + 1];
         // 临时数组存放合并结果
-        int i = left, j = mid + 1;
-        int cur = 0;
+        int cur = 0, i = left, j = mid + 1;
         while (i <= mid && j <= right) {
             // 开始合并数组
-            if (nums[i] <= nums[j]) temp[cur] = nums[i++];
-            else temp[cur] = nums[j++];
-            cur++;
+            if (nums[i] <= nums[j]) temp[cur++] = nums[i++];
+            else temp[cur++] = nums[j++];
         }
         while (i <= mid) temp[cur++] = nums[i++];
         while (j <= right) temp[cur++] = nums[j++];

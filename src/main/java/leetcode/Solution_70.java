@@ -1,7 +1,12 @@
 package leetcode;
 
 public class Solution_70 {
-    // 爬楼梯
+
+    /**
+     * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶-n阶
+     * @param n
+     * @return
+     */
     public int climbStairs(int n) {
         /**
          * A1 = 1;

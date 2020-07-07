@@ -14,10 +14,9 @@ public class QuickSortII {
     }
 
     /**
-     * 非递归
+     * 非递归快排
      */
     public static void sort(int[] a, int low, int high) {
-        int pivot;
         if (low >= high) return;
         Stack<Integer> stack = new Stack<>();
         stack.push(low);
@@ -29,6 +28,7 @@ public class QuickSortII {
          * 栈最开始元素是0，3 第二次循环元素是0，4，6，7，第五个元素的位置定好了
          * partition(a, low, high)的low high元素来自栈的pop()
          */
+        int pivot;
         while (!stack.empty()) {
             // 先弹出high, 再弹出low
             high = stack.pop();

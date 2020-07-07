@@ -10,10 +10,11 @@ import java.util.stream.Collectors;
  * 输入：arr = [4,3,1,1,3,3,2], k = 3
  * 输出：2
  * 解释：先移除 4、2 ，然后再移除两个 1 中的任意 1 个或者三个 3 中的任意 1 个，最后剩下 1 和 3 两种整数。
- *
  */
-public class Solution_5437 {
+public class Solution_1481 {
+
     public int findLeastNumOfUniqueInts(int[] arr, int k) {
+
         Map<Integer, Integer> map = new HashMap<>();
         for (int i =0; i < arr.length; i++) {
             if (map.containsKey(arr[i])) {
@@ -23,28 +24,24 @@ public class Solution_5437 {
             }
         }
         List<Integer> res = map.values().stream().sorted().collect(Collectors.toList());
+        /*
+         * 4 1
+         * 2 1
+         * 1 2
+         * 3 3
+         * 元素个数排序 1 1 2 3
+         */
+        int size = res.size();
+        for (int i = 0; i < res.size(); i++) {
+            if (res.get(i) <= k) {
+                k = k - res.get(i);
+                size--;
+            } else {
+                break;
+            }
+        }
 
-        int[] resSum = new int[res.size()];
-        resSum[0] = res.get(0);
-
-        for (int i = 1; i < res.size(); i++) {
-            resSum[i] += resSum[i - 1] + res.get(i);
-        }
-        if (k < resSum[0]) {
-            return resSum.length;
-        }
-        if (k == resSum[0]) {
-            return resSum.length - 1;
-        }
-
-        for (int i = 1; i < resSum.length; i++) {
-           if (resSum[i] == k) {
-               return resSum.length - i - 1;
-           }
-           if (k < resSum[i] && k > resSum[i-1]) {
-               return resSum.length - i;
-           }
-        }
-        return 0;
+        return size;
     }
+
 }
